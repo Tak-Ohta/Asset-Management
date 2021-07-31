@@ -65,3 +65,18 @@ p {
   color: #fff;
   text-decoration: none;
 }
+
+.navbar {
+  background-color:#000088;
+  color: #fff;
+}
+
+.nav, .nav-item {
+  color: #fff;
+}
+
+.navbar-nav > li > a:hover {
+  color:#ffa500;
+  text-decoration: none;
+  background-color:#000088;
+}

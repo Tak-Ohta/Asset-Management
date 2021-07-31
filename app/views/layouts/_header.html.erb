@@ -1,12 +1,12 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <%= link_to "資産管理共有アプリ", '#', id: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <!-- ↓↓↓ <%= link_to "Top", root_path %> とルートパスを明示した記述にする -->
-        <li><%= link_to "トップ", '#' %>
-        <li><%= link_to "ログイン", '#' %>
-      </ul>
-    </nav>
-  </div>
+<header>
+  <nav class="navbar navbar-expand navbar-fixed-top">
+    <div class="container">
+      <%= link_to "資産管理共有アプリ", '#', id: "logo" %>
+        <ul class="nav navbar-nav navbar-right">
+          <!-- ↓↓↓ <%= link_to "Top", root_path %> とルートパスを明示した記述にする -->
+          <li><%= link_to "トップ", '#', class: "nav-item" %></li>
+          <li><%= link_to "ログイン", '#', class: "nav-item" %></li>
+        </ul>
+    </div>
+  </nav>
 </header>
