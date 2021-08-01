@@ -6,7 +6,7 @@
   <div class="col-md-6 col-md-offset-3">
     <%= form_with(model: @user, local: true) do |f| %>
       <%= render 'shared/error_messages' %>
-      
+
       <%= f.label :name, class: "label-signup" %>
       <%= f.text_field :name, class: "form-control" %>
 
@@ -22,8 +22,8 @@
       <%= f.label :birthday, class: "label-signup" %>
       <%= f.date_field :birthday, class: "form-control" %>
 
-      <%= f.label :sex, class: "label-signup" %>
-      <%= f.text_field :sex, class: "form-control" %>
+      <%= f.label :sex, class: "label-signup" %><br>
+      <%= f.radio_button :sex, "男性" %>男性 <%= f.radio_button :sex, "女性" %>女性<br>
 
       <%= f.label :prefecture, class: "label-signup" %>
       <%= f.text_field :prefecture, class: "form-control" %>
