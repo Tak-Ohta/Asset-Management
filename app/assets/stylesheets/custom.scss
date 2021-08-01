@@ -36,12 +36,12 @@ text-align: center;
 }
 
 h2 {
-  font-size: 1.2em;
+  font-size: 1.8em;
   letter-spacing: -1px;
+  margin-top: 50px;
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: #777;
 }
 
 p {
@@ -81,12 +81,36 @@ p {
   background-color:#000088;
 }
 
-/* user-table */
+/* ユーザー情報テーブル */
 .user-table {
+  margin-top: 50px;
   text-align: left;
   vertical-align: middle;
 }
 
+.label-signup {
+  margin-top: 10px;
+}
+
+.btn-signup {
+  margin-top: 20px;
+}
+
+/* エラーメッセージ */
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 10px 0 30px 0;
+  }
+
+  .field_with_errors {
+    @extend .has-error;
+    .form-control {
+      color: $state-danger-text;
+    }
+  }
+}
 
 /* debug */
 .debug_dump {

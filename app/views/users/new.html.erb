@@ -1,0 +1,34 @@
+<%= provide(:title, "ユーザー登録") %>
+
+<h2>ユーザー登録</h2>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_with(model: @user, local: true) do |f| %>
+      <%= render 'shared/error_messages' %>
+      
+      <%= f.label :name, class: "label-signup" %>
+      <%= f.text_field :name, class: "form-control" %>
+
+      <%= f.label :email, class: "label-signup" %>
+      <%= f.text_field :email, class: "form-control" %>
+
+      <%= f.label :password, class: "label-signup" %>
+      <%= f.text_field :password, class: "form-control" %>
+
+      <%= f.label :password_confirmation, class: "label-signup" %>
+      <%= f.text_field :password_confirmation, class: "form-control" %>
+
+      <%= f.label :birthday, class: "label-signup" %>
+      <%= f.date_field :birthday, class: "form-control" %>
+
+      <%= f.label :sex, class: "label-signup" %>
+      <%= f.text_field :sex, class: "form-control" %>
+
+      <%= f.label :prefecture, class: "label-signup" %>
+      <%= f.text_field :prefecture, class: "form-control" %>
+
+      <%= f.submit "新規登録", class: "btn btn-primary btn-block btn-signup" %>
+    <% end %>
+  </div>
+</div>
