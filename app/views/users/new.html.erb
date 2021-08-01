@@ -23,10 +23,22 @@
       <%= f.date_field :birthday, class: "form-control" %>
 
       <%= f.label :sex, class: "label-signup" %><br>
-      <%= f.radio_button :sex, "男性" %>男性 <%= f.radio_button :sex, "女性" %>女性<br>
+      <%= f.radio_button :sex, "男性", class: "radio-button" %>&nbsp;男性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <%= f.radio_button :sex, "女性", class: "radio-button" %>&nbsp;女性<br>
 
       <%= f.label :prefecture, class: "label-signup" %>
       <%= f.text_field :prefecture, class: "form-control" %>
+
+      <%= f.label :occupation, class: "label-signup" %><br>
+      <%= f.select :occupation, [ ["経営者・会社役員", 1], ["会社員（正社員）", 2], ["会社員（契約社員）", 3],
+                                 ["会社員（派遣社員）", 4], ["パート・アルバイト", 5], ["公務員", 6],
+                                 ["自営業・フリーランス", 7], ["専業主婦・主夫", 8], ["大学生・大学院生", 9],
+                                 ["専門学校生・短大生", 10], ["士業（弁護士・公認会計士・税理士等", 11], ["無職", 12],
+                                 ["定年退職", 13], ["その他", 14] ], prompt: "職業を選択してください。", class: "form-control" %><br>
+      
+      <%= f.label :marriage, class: "label-signup" %><br>
+      <%= f.radio_button :marriage, "未婚" %>&nbsp;未婚&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <%= f.radio_button :marriage, "既婚" %>&nbsp;既婚<br>
 
       <%= f.submit "新規登録", class: "btn btn-primary btn-block btn-signup" %>
     <% end %>
