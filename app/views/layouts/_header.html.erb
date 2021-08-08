@@ -3,9 +3,24 @@
     <div class="container">
       <%= link_to "資産管理共有アプリ", '#', id: "logo" %>
         <ul class="nav navbar-nav navbar-right">
-          <!-- ↓↓↓ <%= link_to "Top", root_path %> とルートパスを明示した記述にする -->
-          <li><%= link_to "トップ", '#', class: "nav-item" %></li>
-          <li><%= link_to "ログイン", '#', class: "nav-item" %></li>
+          
+          <!-- 勤怠6章6.4を参考にする -->
+          <% if logged_in? %>
+            <!-- ↓↓↓ <%= link_to "Top", root_path %> とルートパスを明示した記述にする -->
+            <li><%= link_to "トップ", '#', class: "nav-item" %></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                アカウント <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "ユーザ情報", current_user, class: "nav-item" %></li> <!-- user_path(current_user) と同じ -->
+                <li class="divider"></li>
+                <li><%= link_to "ログアウト", logout_path, method: :delete, class: "nav-item" %></li>
+              </ul>
+            </li>
+          <% else %>
+            <li><%= link_to "ログイン", login_path, class: "nav-item" %></li>
+          <% end %>
         </ul>
     </div>
   </nav>

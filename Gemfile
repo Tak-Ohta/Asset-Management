@@ -6,7 +6,9 @@ git_source(:github) do |repo_name|
 end
 
 gem 'rails', '~> 5.1.6'
+gem 'rails-i18n'
 gem 'bootstrap-sass'
+gem 'jquery-rails'
 gem 'sqlite3'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
