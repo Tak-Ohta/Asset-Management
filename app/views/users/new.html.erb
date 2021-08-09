@@ -34,7 +34,7 @@
                                  ["会社員（派遣社員）", 4], ["パート・アルバイト", 5], ["公務員", 6],
                                  ["自営業・フリーランス", 7], ["専業主婦・主夫", 8], ["大学生・大学院生", 9],
                                  ["専門学校生・短大生", 10], ["士業（弁護士・公認会計士・税理士等", 11], ["無職", 12],
-                                 ["定年退職", 13], ["その他", 14] ], prompt: "選択してください。", class: "form-control" %><br>
+                                 ["定年退職", 13], ["その他", 14] ], { prompt: "選択してください" }, { class: 'form-control' } %><br>
       
       <%= f.label :marriage, class: "label-signup" %><br>
       <%= f.radio_button :marriage, "未婚" %>&nbsp;未婚&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -45,7 +45,7 @@
       <%= f.label :annual_income, class: "label-signup" %><br>
       <%= f.select :annual_income, [ ["200万円未満", 1], ["200万円以上 〜 400万円未満", 2], ["400万円以上 〜 600万円未満", 3],
                                     ["600万円以上 〜 800万円未満", 4], ["800万円以上 〜 1,000万円未満", 5], ["1,000万円以上 〜 2,000万円未満", 6],
-                                    ["2,000万円以上", 7] ], prompt: "選択してください。", class: "form-control" %><br>
+                                    ["2,000万円以上", 7] ], { prompt: "選択してください" }, { class: 'form-control' } %><br>
 
       <%= f.submit "新規登録", class: "btn btn-primary btn-block btn-signup" %>
     <% end %>
