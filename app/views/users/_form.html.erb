@@ -1,0 +1,46 @@
+<%= form_with(model: @user, local: true) do |f| %>
+  <%= render 'shared/error_messages' %>
+
+  <%= f.label :name, class: "label-#{yield(:class_text)}" %>
+  <%= f.text_field :name, class: "form-control" %>
+
+  <%= f.label :email, class: "label-#{yield(:class_text)}" %>
+  <%= f.text_field :email, class: "form-control" %>
+
+  <%= f.label :password, class: "label-#{yield(:class_text)}" %>
+  <%= f.text_field :password, class: "form-control" %>
+
+  <%= f.label :password_confirmation, class: "label-#{yield(:class_text)}" %>
+  <%= f.text_field :password_confirmation, class: "form-control" %>
+
+  <%= f.label :birthday, class: "label-#{yield(:class_text)}" %>
+  <%= f.date_field :birthday, class: "form-control" %>
+
+  <%= f.label :sex, class: "label-#{yield(:class_text)}" %><br>
+  <%= f.radio_button :sex, "男性", class: "radio-button" %>&nbsp;男性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <%= f.radio_button :sex, "女性", class: "radio-button" %>&nbsp;女性<br>
+
+  <%= f.label :prefecture, class: "label-#{yield(:class_text)}" %>
+  <%= f.text_field :prefecture, class: "form-control" %>
+
+  <%= f.label :occupation, class: "label-#{yield(:class_text)}" %><br>
+  <%= f.select :occupation, [ ["経営者・会社役員", "経営者・会社役員"], ["会社員（正社員）", "会社員（正社員）"], ["会社員（契約社員）", "会社員（契約社員）"],
+                              ["会社員（派遣社員）", "会社員（派遣社員）"], ["パート・アルバイト", "パート・アルバイト"], ["公務員", "公務員"],
+                              ["自営業・フリーランス", "自営業・フリーランス"], ["専業主婦・主夫", "専業主婦・主夫"], ["大学生・大学院生", "大学生・大学院生"],
+                              ["専門学校生・短大生", "専門学校生・短大生"], ["士業（弁護士・公認会計士・税理士等", "士業（弁護士・公認会計士・税理士等"], ["無職", "無職"],
+                              ["定年退職", "定年退職"], ["その他", "その他"] ], { prompt: "選択してください" }, { class: 'form-control' } %><br>
+  
+  <%= f.label :marriage, class: "label-#{yield(:class_text)}" %><br>
+  <%= f.radio_button :marriage, "未婚" %>&nbsp;未婚&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <%= f.radio_button :marriage, "既婚" %>&nbsp;既婚<br>
+  
+  <!-- 子供の有無 -->
+  
+  <%= f.label :annual_income, class: "label-#{yield(:class_text)}" %><br>
+  <%= f.select :annual_income, [ ["200万円未満", "200万円未満"], ["200万円以上 〜 400万円未満", "200万円以上 〜 400万円未満"],
+                                ["400万円以上 〜 600万円未満", "400万円以上 〜 600万円未満"], ["600万円以上 〜 800万円未満", "600万円以上 〜 800万円未満"],
+                                ["800万円以上 〜 1,000万円未満", "800万円以上 〜 1,000万円未満"], ["1,000万円以上 〜 2,000万円未満", "1,000万円以上 〜 2,000万円未満"],
+                                ["2,000万円以上", "2,000万円以上"] ], { prompt: "選択してください" }, { class: 'form-control' } %><br>
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary btn-block btn-#{yield(:class_text)}" %>
+<% end %>

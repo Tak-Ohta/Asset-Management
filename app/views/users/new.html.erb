@@ -1,53 +1,11 @@
-<%= provide(:title, "ユーザー登録") %>
+<% provide(:title, "ユーザー登録") %>
+<% provide(:class_text, "signup") %>
+<% provide(:button_text, "新規登録") %>
 
 <h2>ユーザー登録</h2>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_with(model: @user, local: true) do |f| %>
-      <%= render 'shared/error_messages' %>
-
-      <%= f.label :name, class: "label-signup" %>
-      <%= f.text_field :name, class: "form-control" %>
-
-      <%= f.label :email, class: "label-signup" %>
-      <%= f.text_field :email, class: "form-control" %>
-
-      <%= f.label :password, class: "label-signup" %>
-      <%= f.text_field :password, class: "form-control" %>
-
-      <%= f.label :password_confirmation, class: "label-signup" %>
-      <%= f.text_field :password_confirmation, class: "form-control" %>
-
-      <%= f.label :birthday, class: "label-signup" %>
-      <%= f.date_field :birthday, class: "form-control" %>
-
-      <%= f.label :sex, class: "label-signup" %><br>
-      <%= f.radio_button :sex, "男性", class: "radio-button" %>&nbsp;男性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <%= f.radio_button :sex, "女性", class: "radio-button" %>&nbsp;女性<br>
-
-      <%= f.label :prefecture, class: "label-signup" %>
-      <%= f.text_field :prefecture, class: "form-control" %>
-
-      <%= f.label :occupation, class: "label-signup" %><br>
-      <%= f.select :occupation, [ ["経営者・会社役員", 1], ["会社員（正社員）", 2], ["会社員（契約社員）", 3],
-                                 ["会社員（派遣社員）", 4], ["パート・アルバイト", 5], ["公務員", 6],
-                                 ["自営業・フリーランス", 7], ["専業主婦・主夫", 8], ["大学生・大学院生", 9],
-                                 ["専門学校生・短大生", 10], ["士業（弁護士・公認会計士・税理士等", 11], ["無職", 12],
-                                 ["定年退職", 13], ["その他", 14] ], { prompt: "選択してください" }, { class: 'form-control' } %><br>
-      
-      <%= f.label :marriage, class: "label-signup" %><br>
-      <%= f.radio_button :marriage, "未婚" %>&nbsp;未婚&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <%= f.radio_button :marriage, "既婚" %>&nbsp;既婚<br>
-      
-      <!-- 子供の有無 -->
-      
-      <%= f.label :annual_income, class: "label-signup" %><br>
-      <%= f.select :annual_income, [ ["200万円未満", 1], ["200万円以上 〜 400万円未満", 2], ["400万円以上 〜 600万円未満", 3],
-                                    ["600万円以上 〜 800万円未満", 4], ["800万円以上 〜 1,000万円未満", 5], ["1,000万円以上 〜 2,000万円未満", 6],
-                                    ["2,000万円以上", 7] ], { prompt: "選択してください" }, { class: 'form-control' } %><br>
-
-      <%= f.submit "新規登録", class: "btn btn-primary btn-block btn-signup" %>
-    <% end %>
+    <%= render 'form' %>
   </div>
 </div>
