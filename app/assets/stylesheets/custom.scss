@@ -121,6 +121,18 @@ p {
   }
 }
 
+/* ユーザー一覧テーブル */
+#table-users {
+  th {
+    font-weight: normal;
+  }
+
+  td {
+    height: 60px;
+    vertical-align: middle;
+  }
+}
+
 
 /* エラーメッセージ */
 #error_explanation {
