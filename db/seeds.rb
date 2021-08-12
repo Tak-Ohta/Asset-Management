@@ -9,7 +9,9 @@ User.create!(name: "Admin User",
             prefecture: "東京都新宿区",
             occupation: "会社員（正社員）",
             marriage: "既婚",
-            annual_income: "600万円以上 〜 800万円未満")
+            annual_income: "600万円以上 〜 800万円未満",
+            admin: true)
+
 
 User.create!(name: "一郎丸",
             email: "sample-1@email.com",

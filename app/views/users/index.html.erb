@@ -13,19 +13,29 @@
         <th>職業</th>
         <th>未婚/既婚</th>
         <th>年収</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
       <% @users.each do |user| %>
-        <tr>
-          <td><%= user.name %></td>
-          <td><%= user.birthday %></td>
-          <td><%= user.sex %></td>
-          <td><%= user.prefecture %></td>
-          <td><%= user.occupation %></td>
-          <td><%= user.marriage %></td>
-          <td><%= user.annual_income %></td>
-        </tr>
+        <% unless user.admin? %>
+          <tr>
+            <td><%= user.name %></td>
+            <td><%= user.birthday %></td>
+            <td><%= user.sex %></td>
+            <td><%= user.prefecture %></td>
+            <td><%= user.occupation %></td>
+            <td><%= user.marriage %></td>
+            <td><%= user.annual_income %></td>
+            <td>
+              <% if current_user.admin? && !current_user?(user) %>
+                <%= link_to "削除", user, method: :delete,
+                    data: { confirm: "#{user.name}のデータを削除してよろしいですか？" },
+                    class: "btn btn-danger" %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
       <%end %>
     </tbody>
   </table>
