@@ -232,3 +232,11 @@ User.create!(name: "Peach",
             occupation: "パート・アルバイト",
             marriage: "既婚",
             annual_income: "200万円未満")
+
+User.all.each do |user|
+  Income.create!(income_name: "給与", user_id: user.id)
+  Income.create!(income_name: "賞与", user_id: user.id)
+  Income.create!(income_name: "副業", user_id: user.id)
+  Income.create!(income_name: "投資", user_id: user.id)
+  Income.create!(income_name: "その他", user_id: user.id)
+end
