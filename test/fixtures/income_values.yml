@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  year_month: 2021-08-14
+  income_value: 1.5
+  description: MyString
+  income: one
+
+two:
+  year_month: 2021-08-14
+  income_value: 1.5
+  description: MyString
+  income: two

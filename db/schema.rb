@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210813095607) do
+ActiveRecord::Schema.define(version: 20210814055755) do
+
+  create_table "income_values", force: :cascade do |t|
+    t.date "year_month"
+    t.float "income_value"
+    t.string "description"
+    t.integer "income_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["income_id"], name: "index_income_values_on_income_id"
+  end
 
   create_table "incomes", force: :cascade do |t|
     t.string "income_name"
