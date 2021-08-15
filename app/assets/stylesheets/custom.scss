@@ -67,7 +67,8 @@ p {
 }
 
 .navbar {
-  background-color:#000066;
+  /* ネイビー#000066 */
+  background-color: #c0c0c0;
   color: #fff;
 }
 
@@ -78,7 +79,8 @@ p {
 .navbar-nav > li > a:hover {
   color:#ff8c00;
   text-decoration: none;
-  background-color:#000066;
+  /* ネイビー#000066 */
+  background-color:  #c0c0c0;
 }
 
 /* ユーザー情報テーブル */
@@ -133,6 +135,21 @@ p {
   }
 }
 
+/* 収入科目テーブル */
+.income-table {
+  th {
+    font-weight: normal;
+  }
+
+  td {
+    height: 50px;
+    vertical-align: middle;
+  }
+}
+
+.income-button {
+  margin-top: 30px;
+}
 
 /* エラーメッセージ */
 #error_explanation {

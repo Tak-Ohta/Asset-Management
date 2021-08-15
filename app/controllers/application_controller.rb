@@ -2,9 +2,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include SessionsHelper
 
-  # paramsハッシュからユーザーを取得する
+  # paramsハッシュからユーザー（:id）を取得する
   def set_user
     @user = User.find(params[:id])
+  end
+
+  # paramsハッシュからユーザー（:id）を取得する
+  def set_user_id
+    @user = User.find(params[:user_id])
   end
 
   # ログイン済みのユーザーか確認する
