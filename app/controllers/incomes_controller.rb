@@ -18,7 +18,7 @@ class IncomesController < ApplicationController
         flash[:success] = "収入科目を登録しました。"
         redirect_to user_incomes_url(@user)
       else
-        flash[:danger] = "登録に失敗しました。やり直してください。"
+        flash.now[:danger] = "登録に失敗しました。やり直してください。"
         render :new
       end
     end
@@ -29,7 +29,16 @@ class IncomesController < ApplicationController
   end
 
   def update
-    
+    income_params.each do |id, item|
+      @income = @user.incomes.find(id)
+      if @income.update_attributes(item)
+        flash[:success] = "収入科目を更新しました。"
+        redirect_to user_incomes_url(@user)
+      else
+        flash.now[:danger] = "更新に失敗しました。やり直してください。"
+        render :edit
+      end
+    end
   end
 
   def destroy
