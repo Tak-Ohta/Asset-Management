@@ -2,6 +2,7 @@ class IncomesController < ApplicationController
   before_action :set_user_id, only: [:index, :new, :create, :edit, :update, :destroy]
   before_action :logged_in_user, only: [:index, :new, :create, :edit, :update, :destroy]
   before_action :correct_user_id, only: [:index, :new, :create, :edit, :update, :destroy]
+  before_action :set_income, only: [:edit, :destroy]
   
   def index
     @incomes = @user.incomes
@@ -25,7 +26,6 @@ class IncomesController < ApplicationController
   end
   
   def edit
-    @income = @user.incomes.find(params[:id])
   end
 
   def update
@@ -42,12 +42,18 @@ class IncomesController < ApplicationController
   end
 
   def destroy
-
+    @income.destroy
+    flash[:success] = "#{@income.income_name}を削除しました。"
+    redirect_to user_incomes_url(current_user)
   end
 
   private
     def income_params
       params.require(:user).permit(incomes: :income_name)[:incomes]
+    end
+
+    def set_income
+      @income = @user.incomes.find(params[:id])
     end
 
 end
