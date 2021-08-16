@@ -135,7 +135,7 @@ p {
   }
 }
 
-/* 収入科目テーブル */
+/* 収入科目一覧テーブル */
 .income-table {
   th {
     font-weight: normal;
@@ -148,6 +148,23 @@ p {
 }
 
 .income-button {
+  margin-top: 30px;
+}
+
+/* 収入科目登録・編集フォーム */
+.label-income--new {
+  margin-top: 20px;
+}
+
+.btn-income--new {
+  margin-top: 30px;
+}
+
+.label-income--edit {
+  margin-top: 20px;
+}
+
+.btn-income--edit {
   margin-top: 30px;
 }
 

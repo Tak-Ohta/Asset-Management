@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
     @user = User.find(params[:id])
   end
 
-  # paramsハッシュからユーザー（:id）を取得する
+  # paramsハッシュからユーザー（:user_id）を取得する
   def set_user_id
     @user = User.find(params[:user_id])
   end
@@ -26,6 +26,12 @@ class ApplicationController < ActionController::Base
     @user = User.find(params[:id])
     redirect_to login_url unless current_user?(@user)
   end
+
+    # アクセスしたユーザーが現在ログインしているユーザー（:user_id）か確認する
+    def correct_user_id
+      @user = User.find(params[:user_id])
+      redirect_to login_url unless current_user?(@user)
+    end
 
   # システム管理権限者かどうか判定する
   def admin_user

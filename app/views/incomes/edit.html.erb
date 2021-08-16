@@ -1,0 +1,17 @@
+<% provide(:title, "収入科目編集") %>
+<% provide(:class_text, 'income--edit' ) %>
+<% provide(:btn_text, "更新") %>
+<h2>収入科目編集</h2>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3" %>
+    <%= form_with(model: @user, url: user_income_path(current_user), method: :patch, local: true) do |f| %>
+      <%= f.fields_for 'incomes[]', @income do |i| %>
+        <%= i.label :income_name, class: "label-#{yield(:class_text)}" %>
+        <%= i.text_field :income_name, class: "form-control" %>
+      <% end %>
+
+      <%= f.submit yield(:btn_text), class: "btn btn-primary btn-block btn-#{yield(:class_text)}" %>
+    <% end %>
+  </div>
+</div>

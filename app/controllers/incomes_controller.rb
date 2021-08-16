@@ -1,29 +1,44 @@
 class IncomesController < ApplicationController
   before_action :set_user_id, only: [:index, :new, :create, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:index, :new, :create, :edit, :update, :destroy]
+  before_action :correct_user_id, only: [:index, :new, :create, :edit, :update, :destroy]
   
   def index
     @incomes = @user.incomes
   end
   
   def new
-    @income = Income.new
+    @income = @user.incomes.build
   end
 
   def create
-
+    @income = @user.incomes.build
+    income_params.each do |item|
+      if @income.update_attributes(item)
+        flash[:success] = "収入科目を登録しました。"
+        redirect_to user_incomes_url(@user)
+      else
+        flash[:danger] = "登録に失敗しました。やり直してください。"
+        render :new
+      end
+    end
   end
   
   def edit
-
+    @income = @user.incomes.find(params[:id])
   end
 
   def update
-
+    
   end
 
   def destroy
 
   end
 
+  private
+    def income_params
+      params.require(:user).permit(incomes: :income_name)[:incomes]
+    end
 
 end

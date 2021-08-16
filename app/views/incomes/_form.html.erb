@@ -1,0 +1,10 @@
+<%= form_with(model: @user, local: true) do |f| %>
+  <%= render 'shared/error_messages' %>
+  
+  <%= f.fields_for "incomes[]", @income do |i| %>
+    <%= i.label :income_name, class: "label-#{yield(:class_text)}" %>
+    <%= i.text_field :income_name, class: "form-control" %>
+  <% end %>
+
+  <%= f.submit yield(:btn_text), class: "btn btn-primary btn-block btn-#{yield(:class_text)}" %>
+<% end %>
